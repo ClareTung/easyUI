@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>easyUI</title>
+    <!--引入easyUI的樣式文件-->
+    <link  rel="stylesheet" type="text/css" href="/jquery-easyui-1.5.4/themes/default/easyui.css">
+    <!--引入easyUI的圖標樣式文件-->
+    <link rel="stylesheet" type="text/css" href="/jquery-easyui-1.5.4/themes/icon.css">
+    <!--引入jQuery-->
+    <script type="text/javascript" src="/jquery-easyui-1.5.4/jquery.min.js"></script>
+    <!--引入easyUI-->
+    <script type="text/javascript" src="/jquery-easyui-1.5.4/jquery.easyui.min.js"></script>
+    <!--引入easyUI的中文國際化js，讓easyUI支持中文-->
+    <script type="text/javascript" src="/jquery-easyui-1.5.4/locale/easyui-lang-zh_CN.js"></script>
+</head>
+<body>
+
+
+<div id="p" class="easyui-panel" title="My Panel"
+     style="width:500px;height:150px;padding:10px;background:#fafafa;"
+     data-options="iconCls:'icon-save',closable:true,
+                collapsible:true,minimizable:true,maximizable:true">
+    <p>panel content.</p>
+    <p>panel content.</p>
+</div>
+<hr/>
+
+<div id="tt" class="easyui-tabs" style="width:500px;height:250px;">
+    <div title="Tab1" style="padding:20px;display:none;">
+        tab1
+    </div>
+    <div title="Tab2" data-options="closable:true" style="overflow:auto;padding:20px;display:none;">
+        tab2
+    </div>
+    <div title="Tab3" data-options="iconCls:'icon-reload',closable:true" style="padding:20px;display:none;">
+        tab3
+    </div>
+</div>
+<hr/>
+<div id="aa" class="easyui-accordion" style="width:300px;height:200px;">
+    <div title="Title1" data-options="iconCls:'icon-save'" style="overflow:auto;padding:10px;">
+        <h3 style="color:#0099FF;">Accordion for jQuery</h3>
+        <p>Accordion is a part of easyui framework for jQuery.
+            It lets you define your accordion component on web page more easily.</p>
+    </div>
+    <div title="Title2" data-options="iconCls:'icon-reload',selected:true" style="padding:10px;">
+        content2
+    </div>
+    <div title="Title3">
+        content3
+    </div>
+</div>
+<hr/>
+<div id="cc" class="easyui-layout" style="width:600px;height:400px;">
+    <div data-options="region:'north',title:'North Title',split:true" style="height:100px;"></div>
+    <div data-options="region:'south',title:'South Title',split:true" style="height:100px;"></div>
+    <div data-options="region:'east',iconCls:'icon-reload',title:'East',split:true" style="width:100px;"></div>
+    <div data-options="region:'west',title:'West',split:true" style="width:100px;"></div>
+    <div data-options="region:'center',title:'center title'" style="padding:5px;background:#eee;"></div>
+</div>
+
+
+<script type="text/javascript">
+
+    // add a new tab panel
+    // $('#tt').tabs('add',{
+    //     title:'New Tab',
+    //     content:'Tab Body',
+    //     closable:true,
+    //     tools:[{
+    //         iconCls:'icon-mini-refresh',
+    //         handler:function(){
+    //             alert('refresh');
+    //         }
+    //     }]
+    // });
+</script>
+</body>
+</html>

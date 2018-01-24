@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>easyUI</title>
+    <!--引入easyUI的樣式文件-->
+    <link  rel="stylesheet" type="text/css" href="/jquery-easyui-1.5.4/themes/default/easyui.css">
+    <!--引入easyUI的圖標樣式文件-->
+    <link rel="stylesheet" type="text/css" href="/jquery-easyui-1.5.4/themes/icon.css">
+    <!--引入jQuery-->
+    <script type="text/javascript" src="/jquery-easyui-1.5.4/jquery.min.js"></script>
+    <!--引入easyUI-->
+    <script type="text/javascript" src="/jquery-easyui-1.5.4/jquery.easyui.min.js"></script>
+    <!--引入easyUI的中文國際化js，讓easyUI支持中文-->
+    <script type="text/javascript" src="/jquery-easyui-1.5.4/locale/easyui-lang-zh_CN.js"></script>
+</head>
+<body>
+<form id="ff" method="post">
+    <div>
+        <label for="name">Name:</label>
+        <input class="easyui-validatebox" type="text" name="name" data-options="required:true" />
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input class="easyui-validatebox" type="text" name="email" data-options="validType:'email'" />
+    </div>
+    <div>
+        <input id="pwd" name="pwd" type="password" class="easyui-validatebox" data-options="required:true" />
+        <input id="rpwd" name="rpwd" type="password" class="easyui-validatebox"
+               required="required" validType="equals['#pwd']" />
+    </div>
+        <div><input class="easyui-validatebox" data-options="validType:'minLength[5]'">
+    </div>
+
+    <div>
+        <!--//使用自定义下拉框不能通过标签的方式进行创建-->
+        <input id="cc" value="001">
+    </div>
+
+    <div>
+        <select id="cc1" class="easyui-combobox" name="dept" style="width:200px;">
+            <option value="aa">aitem1</option>
+            <option>bitem2</option>
+            <option>bitem3</option>
+            <option>ditem4</option>
+            <option>eitem5</option>
+        </select>
+    </div>
+
+    <div>
+        <input type="text" class="easyui-numberbox" value="100" data-options="min:0,precision:2">
+    </div>
+
+    <div>
+        <input id="dd" type="text" class="easyui-datebox" required="required">
+    </div>
+
+    <div>
+        <input class="easyui-datetimebox" name="birthday"
+               data-options="required:true,showSeconds:false" value="3/4/2010 2:3" style="width:150px">
+    </div>
+
+    <div>
+        <div id="cc2" class="easyui-calendar" style="width:180px;height:180px;"></div>
+    </div>
+
+    <div>
+        <input id="ss" value="2">
+    </div>
+    <hr/><hr/>
+    <input id="ss1" class="easyui-numberspinner" style="width:80px;"
+           required="required" data-options="min:10,max:100,editable:false">
+
+    <br><br><br>
+    <input class="easyui-numberspinner" value="1234567890" style="width:150px;"
+           data-options="required:true,precision:2,groupSeparator:',',decimalSeparator:'.',prefix:'$'" />
+
+    <br><br><br>
+    <input id="ss2" class="easyui-timespinner"  style="width:80px;"
+           required="required" data-options="min:'08:30',showSeconds:true" />
+
+    <br><br><br>
+    <input class="easyui-slider" value="12"  style="width:300px"
+           data-options="showTip:true,rule:[0,'|',25,'|',50,'|',75,'|',100]" />
+
+</form>
+
+</body>
+</html>
+<script type="text/javascript">
+    $(function () {
+        //add your code here
+        $('#ss').spinner({
+            required:true,
+            increment:10
+        });
+
+        $('#cc').combo({
+            required:true,
+            multiple:true
+        });
+
+        $.extend($.fn.validatebox.defaults.rules, {
+            minLength: {
+                validator: function(value, param){
+                    return value.length >= param[0];
+                },
+                message: 'Please enter at least {0} characters.'
+            }
+        });
+    });
+
+</script>

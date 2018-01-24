@@ -1,0 +1,6 @@
+server:
+  port: 8081
+spring:
+  freemarker:
+    suffix: .html
+    cache: false

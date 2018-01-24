@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>easyUI</title>
+    <!--引入easyUI的樣式文件-->
+    <link  rel="stylesheet" type="text/css" href="/jquery-easyui-1.5.4/themes/default/easyui.css">
+    <!--引入easyUI的圖標樣式文件-->
+    <link rel="stylesheet" type="text/css" href="/jquery-easyui-1.5.4/themes/icon.css">
+    <!--引入jQuery-->
+    <script type="text/javascript" src="/jquery-easyui-1.5.4/jquery.min.js"></script>
+    <!--引入easyUI-->
+    <script type="text/javascript" src="/jquery-easyui-1.5.4/jquery.easyui.min.js"></script>
+    <!--引入easyUI的中文國際化js，讓easyUI支持中文-->
+    <script type="text/javascript" src="/jquery-easyui-1.5.4/locale/easyui-lang-zh_CN.js"></script>
+</head>
+<body>
+
+    <div id="p" class="easyui-panel" style="width:500px;height:200px;padding:10px;"
+         title="My Panel" data-options="iconCls:'icon-save',collapsible:true">
+        The panel content
+    </div>
+
+    <div id="dd" class="easyui-draggable" data-options="handle:'#title'" style="width:100px;height:100px;">
+        <div id="title" style="background:#ccc;">title</div>
+    </div>
+
+    <div id="rr" class="easyui-resizable" data-options="maxWidth:800,maxHeight:600" style="width:100px;height:100px;border:1px solid #ccc;"></div>
+
+    <div id="pp" class="easyui-pagination" data-options="total:2000,pageSize:10" style="background:#efefef;border:1px solid #ccc;"></div>
+
+    <hr>
+
+    <script type="text/javascript">
+        function qq(value,name){
+            alert(value+":"+name)
+        }
+    </script>
+
+    <input id="ss" class="easyui-searchbox" style="width:300px"
+           data-options="searcher:qq,prompt:'Please Input Value',menu:'#mm'"></input>
+
+    <div id="mm" style="width:120px">
+        <div data-options="name:'all',iconCls:'icon-ok'">All News</div>
+        <div data-options="name:'sports'">Sports News</div>
+    </div>
+
+    <hr/>
+    <div id="pro" style="width:400px;"></div>
+
+    <script type="text/javascript">
+        $('#pro').progressbar({
+            value: 60
+        });
+        var value = $('#pro').progressbar('getValue');
+        if (value < 100){
+            value += Math.floor(Math.random() * 10);
+            $('#pro').progressbar('setValue', value);
+        }
+    </script>
+
+    <hr/>
+    <a href="#" title="This is the tooltip message." class="easyui-tooltip" data-options="position:'right'">Hover me</a>
+
+</body>
+</html>

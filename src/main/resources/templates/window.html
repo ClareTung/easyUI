@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>easyUI</title>
+    <!--引入easyUI的樣式文件-->
+    <link  rel="stylesheet" type="text/css" href="/jquery-easyui-1.5.4/themes/default/easyui.css">
+    <!--引入easyUI的圖標樣式文件-->
+    <link rel="stylesheet" type="text/css" href="/jquery-easyui-1.5.4/themes/icon.css">
+    <!--引入jQuery-->
+    <script type="text/javascript" src="/jquery-easyui-1.5.4/jquery.min.js"></script>
+    <!--引入easyUI-->
+    <script type="text/javascript" src="/jquery-easyui-1.5.4/jquery.easyui.min.js"></script>
+    <!--引入easyUI的中文國際化js，讓easyUI支持中文-->
+    <script type="text/javascript" src="/jquery-easyui-1.5.4/locale/easyui-lang-zh_CN.js"></script>
+</head>
+<body>
+    <div id="win" class="easyui-window" title="My Window" style="width:600px;height:400px"
+         data-options="iconCls:'icon-save',modal:true">
+        Window Content
+    </div>
+
+    <br><br><br>
+    像往常一样定义窗口布局。下面的例子显示了如何将窗体分为两部分：北部和中间。
+
+    <div id="win1" class="easyui-window" title="My Window" style="width:600px;height:400px"
+         data-options="iconCls:'icon-save',modal:true">
+        <div class="easyui-layout" data-options="fit:true">
+            <div data-options="region:'north',split:true" style="height:100px"></div>
+            <div data-options="region:'center'">
+                The Content.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    $(function () {
+        //add your code here
+
+    });
+
+</script>

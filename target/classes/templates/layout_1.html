@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>easyUI</title>
+    <!--引入easyUI的樣式文件-->
+    <link  rel="stylesheet" type="text/css" href="/jquery-easyui-1.5.4/themes/default/easyui.css">
+    <!--引入easyUI的圖標樣式文件-->
+    <link rel="stylesheet" type="text/css" href="/jquery-easyui-1.5.4/themes/icon.css">
+    <!--引入jQuery-->
+    <script type="text/javascript" src="/jquery-easyui-1.5.4/jquery.min.js"></script>
+    <!--引入easyUI-->
+    <script type="text/javascript" src="/jquery-easyui-1.5.4/jquery.easyui.min.js"></script>
+    <!--引入easyUI的中文國際化js，讓easyUI支持中文-->
+    <script type="text/javascript" src="/jquery-easyui-1.5.4/locale/easyui-lang-zh_CN.js"></script>
+</head>
+<body id="cc" class="easyui-layout">
+    <div data-options="region:'north',title:'North Title',split:true" style="height:100px;"></div>
+    <div data-options="region:'south',title:'South Title',split:true" style="height:100px;"></div>
+    <div data-options="region:'east',iconCls:'icon-reload',title:'East',split:true" style="width:100px;"></div>
+    <div data-options="region:'west',title:'West',split:true" style="width:100px;"></div>
+    <div data-options="region:'center',title:'center title'" style="padding:5px;background:#eee;"></div>
+</body>
+<!--<body class="easyui-layout">-->
+<!--<div data-options="region:'north'" style="height:100px"></div>-->
+<!--<div data-options="region:'center'">-->
+    <!--<div class="easyui-layout" data-options="fit:true">-->
+        <!--<div data-options="region:'west',collapsed:true" style="width:180px"></div>-->
+        <!--<div data-options="region:'center'"></div>-->
+    <!--</div>-->
+<!--</div>-->
+<!--</body>-->
+
+<script type="text/javascript">
+    $(function () {
+        $('#cc').layout('add',{
+            region: 'west',
+            width: 180,
+            title: 'West Title',
+            split: true,
+            tools: [{
+                iconCls:'icon-add',
+                handler:function(){alert('add')}
+            },{
+                iconCls:'icon-remove',
+                handler:function(){alert('remove')}
+            }]
+        });
+    });
+
+</script>
+
+</html>

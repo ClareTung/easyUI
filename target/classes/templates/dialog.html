@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>easyUI</title>
+    <!--引入easyUI的樣式文件-->
+    <link  rel="stylesheet" type="text/css" href="/jquery-easyui-1.5.4/themes/default/easyui.css">
+    <!--引入easyUI的圖標樣式文件-->
+    <link rel="stylesheet" type="text/css" href="/jquery-easyui-1.5.4/themes/icon.css">
+    <!--引入jQuery-->
+    <script type="text/javascript" src="/jquery-easyui-1.5.4/jquery.min.js"></script>
+    <!--引入easyUI-->
+    <script type="text/javascript" src="/jquery-easyui-1.5.4/jquery.easyui.min.js"></script>
+    <!--引入easyUI的中文國際化js，讓easyUI支持中文-->
+    <script type="text/javascript" src="/jquery-easyui-1.5.4/locale/easyui-lang-zh_CN.js"></script>
+</head>
+<body>
+    <div id="dd" class="easyui-dialog" title="My Dialog" style="width:400px;height:200px;"
+         data-options="iconCls:'icon-save',resizable:true,modal:true">
+        Dialog Content.
+    </div>
+
+<br>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+    $(function () {
+        //add your code here
+        $.messager.prompt('提示信息', '请输入你的姓名：', function(r){
+            if (r){
+                alert('你的姓名是：' + r);
+            }
+        });
+
+    });
+
+</script>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>easyUI</title>
+    <!--引入easyUI的樣式文件-->
+    <link  rel="stylesheet" type="text/css" href="/jquery-easyui-1.5.4/themes/default/easyui.css">
+    <!--引入easyUI的圖標樣式文件-->
+    <link rel="stylesheet" type="text/css" href="/jquery-easyui-1.5.4/themes/icon.css">
+    <!--引入jQuery-->
+    <script type="text/javascript" src="/jquery-easyui-1.5.4/jquery.min.js"></script>
+    <!--引入easyUI-->
+    <script type="text/javascript" src="/jquery-easyui-1.5.4/jquery.easyui.min.js"></script>
+    <!--引入easyUI的中文國際化js，讓easyUI支持中文-->
+    <script type="text/javascript" src="/jquery-easyui-1.5.4/locale/easyui-lang-zh_CN.js"></script>
+</head>
+<body>
+    <div id="mm" class="easyui-menu" data-options="onClick:menuHandler" style="width:120px;">
+        <div data-options="name:'new'">新建</div>
+        <div data-options="name:'save',iconCls:'icon-save'">保存</div>
+        <div data-options="name:'print',iconCls:'icon-print'">打印</div>
+        <div class="menu-sep"></div>
+        <div data-options="name:'exit'">退出</div>
+    </div>
+
+    <hr/>
+
+    <a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'">easyui</a>
+
+    <hr/>
+    <a href="javascript:void(0)" id="mb" class="easyui-menubutton"
+       data-options="menu:'#mm',iconCls:'icon-edit'">Edit</a>
+    <div id="mm" style="width:150px;">
+        <div data-options="iconCls:'icon-undo'">Undo</div>
+        <div data-options="iconCls:'icon-redo'">Redo</div>
+        <div class="menu-sep"></div>
+        <div>Cut</div>
+        <div>Copy</div>
+        <div>Paste</div>
+        <div class="menu-sep"></div>
+        <div data-options="iconCls:'icon-remove'">Delete</div>
+        <div>Select All</div>
+    </div>
+    <hr/>
+    <a href="javascript:void(0)" id="sb" class="easyui-splitbutton"
+    data-options="menu:'#mm',iconCls:'icon-ok'" onclick="javascript:alert('ok')">Ok</a>
+    <div id="mm" style="width:100px;">
+        <div data-options="iconCls:'icon-ok'">Ok</div>
+        <div data-options="iconCls:'icon-cancel'">Cancel</div>
+    </div>
+
+</body>
+</html>
+<script type="text/javascript">
+    $(function () {
+        //add your code here
+        //在菜单被创建的时候它是隐藏和不可见的。调用'show'方法显示菜单。
+        $('#mm').menu('show', {
+            left: 100,
+            top: 200
+        });
+
+        $('#btn').bind('click',function () {
+            alert('easyui');
+        });
+
+    });
+    function menuHandler(item){
+        alert(item.name)
+    }
+</script>
